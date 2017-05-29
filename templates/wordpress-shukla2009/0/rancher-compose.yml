@@ -1,0 +1,13 @@
+.catalog:
+  name: wordpress-shukla2009
+  version: 0.0.1
+  description: Sample rancher catalog
+  uuid: 2009
+  minimum_rancher_version: # The minimum version of Rancher that supports the template
+  questions: #Used to request user input for configuration options
+  wordpress:
+    scale: 1
+    start_on_create: true
+  mysql:
+    scale: 1
+    start_on_create: true

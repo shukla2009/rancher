@@ -1,0 +1,8 @@
+name: WordPress-Shukla2009
+description: |
+  # Sample rancher template
+version: 0.0.1
+category: sample
+maintainer: Rahul Shukla <rahul.shukla@avaliatech.com>
+license: # The license
+projectURL: # A URL related to the catalog entry

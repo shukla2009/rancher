@@ -1,0 +1,30 @@
+version: '2'
+services:
+  wordpress:
+    image: wordpress
+    environment:
+      WORDPRESS_DB_PASSWORD: wordpress
+      WORDPRESS_DB_USER: wordpress
+    stdin_open: true
+    tty: true
+    links:
+    - mysql:mysql
+    ports:
+    - 8080:80/tcp
+    labels:
+      io.rancher.container.pull_image: always
+      io.rancher.scheduler.affinity:host_label: name=demo2
+  mysql:
+    image: mysql
+    environment:
+      MYSQL_DATABASE: wordpress
+      MYSQL_PASSWORD: wordpress
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_USER: wordpress
+    stdin_open: true
+    tty: true
+    ports:
+    - 3306:3306/tcp
+    labels:
+      io.rancher.container.pull_image: always
+      io.rancher.scheduler.affinity:host_label: name=demo1
